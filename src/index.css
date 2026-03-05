@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-mc: "VT323", monospace;
+}
+
+@layer base {
+  :root {
+    --bg-deep: #0d1017;
+    --bg-panel: #141820;
+    --bg-slot: #1a1f2b;
+    --border-ui: #252b38;
+    --text-primary: #e8eaf0;
+    --text-secondary: #8b92a5;
+    --accent-gold: #f59e0b;
+  }
+
+  body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    image-rendering: auto;
+    overflow: hidden;
+    @apply antialiased;
+  }
+}
+
+@layer components {
+
+  /* Contenedor Estilo IDE Profesional */
+  .pro-container {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-ui);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    @apply transition-all duration-300;
+  }
+
+  /* Slot de Inventario Refinado */
+  .pro-slot {
+    aspect-ratio: 1/1;
+    background-color: var(--bg-slot);
+    border: 1px solid var(--border-ui);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .pro-slot:hover {
+    background-color: #252b38;
+    border-color: #3a4255;
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .pro-slot.active-border {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+  }
+
+  .mc-text-shadow {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3a4255;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4a5268;
+    background-clip: padding-box;
+  }
+}
+
+
+
+
+.main-viewport {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Minecraft Inventory Planner",
+  "description": "A professional tool for Minecraft developers and server owners to plan inventory layouts, select colored slots, and export slot arrays for plugins or scripts.",
+  "requestFramePermissions": []
+}
